@@ -18,20 +18,20 @@ alumnos = [
 
 def binary_search(vector, init, end):
   if end == init:
-    return vector[init].altura
+    return end
   else:
     middle = (end + init) // 2
-    left = binary_search(vector, init, middle )
+    left = binary_search(vector, init, middle)
     right = binary_search(vector, middle + 1, end)
     # print(f"left: {left} - right: {right}")
-    return left if left < right else right 
+    return left if vector[left].altura < vector[right].altura else right
 
 
 
 def indice_mas_bajo(alumnos):                   
-    min_height = binary_search(alumnos, 0, len(alumnos) - 1)
+    min_height_i = binary_search(alumnos, 0, len(alumnos) - 1)
     # print(f"Altura mas baja: {min_height}")
-    return min_height
+    return min_height_i
 
 def validar_mas_bajo(alumnos, indice):
     return alumnos[indice].altura < alumnos[indice + 1].altura and alumnos[indice].altura < alumnos[indice - 1].altura
