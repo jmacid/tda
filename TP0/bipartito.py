@@ -1,5 +1,7 @@
 import sys
-# Para el caso de querer implementar un DFS, 
+from collections import deque
+
+# Para el caso de querer implementar un DFS,
 # para que no hayan problemas en la prueba de volumen
 sys.setrecursionlimit(10000)
 
@@ -47,4 +49,4 @@ graph = [
     [0, 2]   # neighbors of 3
 ]
 
-print(is_bipartite(graph))  # Output: True
+print(es_bipartito(graph))  # Output: True
